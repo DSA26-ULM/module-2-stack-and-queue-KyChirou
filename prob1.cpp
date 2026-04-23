@@ -13,11 +13,9 @@ int main() {
         std::string token;
         std::cin >> token;
 
-        // Cek apakah token adalah angka (bisa negatif)
         if (isdigit(token[0]) || (token.length() > 1 && token[0] == '-')) {
             push(&s, std::stoi(token));
         } else {
-            // Jika operator, ambil 2 nilai teratas [cite: 16]
             int val2 = peek(&s); pop(&s);
             int val1 = peek(&s); pop(&s);
 
@@ -28,7 +26,6 @@ int main() {
         }
     }
 
-    // Tampilkan hasil akhir [cite: 17, 36]
     std::cout << peek(&s) << std::endl;
     return 0;
 }
